@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add User</title>
+  </head>
+  <body>
+    <h1>New User Form</h1>
+    <form action="/users/save" method="POST">
+      <p><input type="text" name="name" placeholder="User Name" /></p>
+      <p><input type="email" name="email" placeholder="User Email" /></p>
+      <p><input type="number" name="age" placeholder="User Age" /></p>
+      <p><input type="text" name="role" placeholder="User Role (e.g. Admin, Editor)" /></p>
+      <p><button>Save</button></p>
+    </form>
+  </body>
+</html>
