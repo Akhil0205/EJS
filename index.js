@@ -1,29 +1,13 @@
-//render html file with data to the client
-
-//  app.get("/",(req,res)=>
-//     {
-//         // res.json({message:"Hello World..!!"})
-//         res.render("index",{name:"John"})
-//         //returns html file as output
-
-//         //html file created in the server
-//     })   
-
-
-//page refreshes on every change making it slower    
-// app.get("/products",(req,res)=>
-//     {
-//         res.render("products",{products})
-//     })
-import expressLayouts from 'express-ejs-layouts'
 import express from "express";
 import mongoose from "mongoose";
+import expressLayouts from "express-ejs-layouts";
 const app = express();
-app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(expressLayouts)
 app.set("layout","layout")
+app.set("view engine", "ejs");
+app.use(express.static("public"))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 const dbConnect = async () => {
   await mongoose.connect("mongodb://localhost:27017/merndatabase");
 };
